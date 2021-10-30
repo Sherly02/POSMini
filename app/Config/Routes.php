@@ -35,6 +35,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/admin_login', 'Login::index');
 $routes->get('/login', 'Login::loginAuth');
 $routes->get('/admin_dashboard', 'AdminDashboard::index');
+$routes->get('/manageProduct', 'Product::list');
+$routes->get('/insertProduct', 'Product::insert');
 
 /*
  * --------------------------------------------------------------------
