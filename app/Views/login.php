@@ -5,15 +5,22 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title text-center mb-3">Admin Log in</h5>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" name="act" class="btn btn-primary btn-info">Log in</button>
-                    </div>
+                    <?php if(session()->getFlashdata('msg')):?>
+                        <div class="alert alert-warning">
+                            <?= session()->getFlashdata('msg') ?>
+                        </div>
+                    <?php endif;?>
+                    <form action="<?php echo base_url();?>/login" method="post">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="username" placeholder="Username">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary btn-info">Log in</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
